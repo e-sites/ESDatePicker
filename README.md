@@ -1,4 +1,4 @@
-Again another date picker
+ESDatePicker
 ============
 [![Platform](https://cocoapod-badges.herokuapp.com/p/ESDatePicker/badge.png)](http://cocoadocs.org/docsets/ESDatePicker)
 [![Version](https://cocoapod-badges.herokuapp.com/v/ESDatePicker/badge.png)](http://cocoadocs.org/docsets/ESDatePicker)
