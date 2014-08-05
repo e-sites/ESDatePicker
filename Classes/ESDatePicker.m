@@ -41,16 +41,13 @@
         CGFloat tw = self.frame.size.width;
         [self setBackgroundColor:[UIColor clearColor]];
         const CGFloat lineHeight = 1.0f / [[UIScreen mainScreen] scale];
-        const CGFloat y = self.frame.size.height - lineHeight;
-        [self setSelectionStyle:UITableViewCellEditingStyleNone];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         
         _buttons = [[NSMutableArray alloc] init];
         UIControl *p = nil;
         UIControl *firstButton = nil;
         for (NSInteger i = 0; i < 7; i++) {
-            CGFloat x = (tw / 7.0f) * i;
-            
             UIControl *btn = [[UIControl alloc] init];
             [self addSubview:btn];
             [btn setTag:i];
@@ -285,7 +282,7 @@
     
     
     __weak__block typeof(self) blockSelf = self;
-    __weak__block typeof(_monthScrollView) blockMonthScrollViewContainer = _monthScrollViewContainer;
+    __weak__block typeof(_monthScrollViewContainer) blockMonthScrollViewContainer = _monthScrollViewContainer;
     [_objectPool allocObjectsWithCapacity:4 withClass:[UILabel class] withInitBlock:^(UILabel *label) {
         [label init];
         [label setHidden:YES];
@@ -511,11 +508,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.rowHeight;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger index = [indexPath row];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
