@@ -47,8 +47,8 @@ The official documentation can be found [here](http://cocoadocs.org/docsets/ESDa
 
 ## Dependencies
 - [Masonry](https://github.com/Masonry/Masonry)
-- [ESDateHelper](https://github.com/Masonry/ESDateHelper)
-- [ESObjectPool](https://github.com/Masonry/ESObjectPool)
+- [ESDateHelper](https://github.com/e-sites/ESDateHelper)
+- [ESObjectPool](https://github.com/e-sites/ESObjectPool)
 
 ## License
 Copyright (C) 2014 e-sites, [http://e-sites.nl/](http://www.e-sites.nl/). Licensed under the BSD license.
