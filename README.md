@@ -7,7 +7,7 @@ A custom date picker similar like the date picker of the Sunrise app and the Goo
 
 ## Example
 <br>
-![Example](https://raw.github.com/e-sites/ESDatePicker/master/Assets/example.gif)
+![Example](https://raw.github.com/e-sites/ESDatePicker/master/Assets/example2.gif)
 
 
 ## Features
