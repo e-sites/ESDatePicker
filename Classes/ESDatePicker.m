@@ -250,7 +250,6 @@
 
 - (instancetype)initWithDelegate:(id<ESDatePickerDelegate>)aDelegate
 {
-    
     if (self = [super init]) {
         [self _init];
         [self setDelegate:aDelegate];
@@ -274,8 +273,17 @@
     return self;
 }
 
+- (id)init
+{
+    if (self = [super init]) {
+        [self _init];
+    }
+    return self;
+}
+
 - (void)_init
 {
+    if (_monthScrollView != nil) { return; }
     _monthScrollView = [[UIScrollView alloc] init];
     [self addSubview:_monthScrollView];
     [_monthScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -293,7 +301,7 @@
     mrelease(_monthScrollViewContainer);
     _selectedDate = [[NSDate date] retain];
     
-    _objectPool = [[ESObjectPool staticObjectPool] retain];
+    _objectPool = [[ESObjectPool dynamicObjectPool] retain];
     _monthViews = [[NSMutableDictionary alloc] init];
     
     _monthIndicatorFont = [[UIFont boldSystemFontOfSize:17] retain];
@@ -341,6 +349,12 @@
     mrelease(_tableView);
     mrelease(_monthScrollView);
     [self setVisibleRows:5];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    [self showDates:_beginDate :_endDate];
 }
 
 #pragma mark - Properties
@@ -460,6 +474,7 @@
 
 - (void)showDates:(NSDate *)beginDate :(NSDate *)endDate
 {
+    [self setVisibleRows:self.visibleRows];
     mrelease(_beginDate);
     mrelease(_endDate);
     
@@ -471,6 +486,9 @@
     
     _beginDate = [beginDate retain];
     _endDate = [endDate retain];
+    
+    if (_rowHeight == 0) { return; }
+    
     _rows = [_endDate weeksFromDate:_beginDate];
     [_monthScrollViewContainer mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(_rows * self.rowHeight));

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = "ESDatePicker"
-  s.version        = "1.1.1"
+  s.version        = "1.1.2"
   s.platform       = :ios, "6.0"
   s.summary        = "Again another date picker"
   s.author         = { "Bas van Kuijck" => "bas@e-sites.nl" }
