@@ -107,6 +107,12 @@
 @property (nonatomic, retain) UIColor *selectedLabelTextColor;
 
 /**
+ * Should the current day be highlighted
+ * @discussion Default = YES
+ */
+@property (nonatomic, readwrite, getter=shouldShowCurrentDay) BOOL showCurrentDay;
+
+/**
  * The color of the dividers
  * @discussion Default = light grey
  */

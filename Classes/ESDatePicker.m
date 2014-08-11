@@ -101,16 +101,19 @@
             
             CGFloat w = (tw / 7.0f) / 1.5;
             UIView *bg = [[UIView alloc] init];
+            [bg setUserInteractionEnabled:NO];
             [btn addSubview:bg];
             [bg mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.equalTo(@(w));
                 make.height.equalTo(@(w));
                 make.center.equalTo(btn);
             }];
-            [bg setBackgroundColor:_datePicker.selectedColor];
             [bg setTag:200];
-            [bg setHidden:YES];
             [bg.layer setCornerRadius:(w / 2)];
+            if (_datePicker.shouldShowCurrentDay) {
+                bg.layer.borderWidth = 0;
+                bg.layer.borderColor = [_datePicker.selectedColor CGColor];
+            }
             mrelease(bg);
             
             UILabel *label = [[UILabel alloc] init];
@@ -195,7 +198,16 @@
             [fm setDateFormat:@"d"];
         }
         BOOL b = [d isSameDay:_datePicker.selectedDate];
-        [[btn viewWithTag:200] setHidden:!b];
+        UIView *bg = [btn viewWithTag:200];
+        
+        if (b) {
+            [bg setBackgroundColor:_datePicker.selectedColor];
+        } else {
+            [bg setBackgroundColor:[UIColor clearColor]];
+        }
+        bg.layer.borderWidth = [d isToday] && _datePicker.shouldShowCurrentDay ? 1 : 0;
+        
+        
         if (b) {
             [lbl setTextColor:_datePicker.selectedLabelTextColor];
         } else {
@@ -246,10 +258,11 @@
 @end
 
 @implementation ESDatePicker
-@synthesize visibleRows=_visibleRows,rowHeight=_rowHeight,beginOfWeek=_beginOfWeek,zebraPrint,monthIndicatorFont=_monthIndicatorFont,labelFont=_labelFont,monthIndicatorTextColor=_monthIndicatorTextColor,labelTextColor=_labelTextColor,selectedDate=_selectedDate,delegate,selectedColor=_selectedColor,selectedLabelTextColor=_selectedLabelTextColor,lineColor=_lineColor,showHorizontalLines=_showHorizontalLines,showVerticalLines=_showVerticalLines,locale=_locale;
+@synthesize visibleRows=_visibleRows,rowHeight=_rowHeight,beginOfWeek=_beginOfWeek,zebraPrint,monthIndicatorFont=_monthIndicatorFont,labelFont=_labelFont,monthIndicatorTextColor=_monthIndicatorTextColor,labelTextColor=_labelTextColor,selectedDate=_selectedDate,delegate,selectedColor=_selectedColor,selectedLabelTextColor=_selectedLabelTextColor,lineColor=_lineColor,showHorizontalLines=_showHorizontalLines,showVerticalLines=_showVerticalLines,locale=_locale,showCurrentDay=_showCurrentDay;
 
 - (instancetype)initWithDelegate:(id<ESDatePickerDelegate>)aDelegate
 {
+    
     if (self = [super init]) {
         [self _init];
         [self setDelegate:aDelegate];
@@ -273,17 +286,8 @@
     return self;
 }
 
-- (id)init
-{
-    if (self = [super init]) {
-        [self _init];
-    }
-    return self;
-}
-
 - (void)_init
 {
-    if (_monthScrollView != nil) { return; }
     _monthScrollView = [[UIScrollView alloc] init];
     [self addSubview:_monthScrollView];
     [_monthScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -301,7 +305,7 @@
     mrelease(_monthScrollViewContainer);
     _selectedDate = [[NSDate date] retain];
     
-    _objectPool = [[ESObjectPool dynamicObjectPool] retain];
+    _objectPool = [[ESObjectPool staticObjectPool] retain];
     _monthViews = [[NSMutableDictionary alloc] init];
     
     _monthIndicatorFont = [[UIFont boldSystemFontOfSize:17] retain];
@@ -345,16 +349,11 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
+    _showCurrentDay = YES;
     [_monthScrollView setHidden:YES];
     mrelease(_tableView);
     mrelease(_monthScrollView);
     [self setVisibleRows:5];
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-    [self showDates:_beginDate :_endDate];
 }
 
 #pragma mark - Properties
@@ -425,6 +424,12 @@
     [_tableView reloadData];
 }
 
+- (void)setShowCurrentDay:(BOOL)showCurrentDay
+{
+    _showCurrentDay = showCurrentDay;
+    [_tableView reloadData];
+}
+
 - (void)setShowVerticalLines:(BOOL)showVerticalLines
 {
     _showVerticalLines = showVerticalLines;
@@ -474,7 +479,6 @@
 
 - (void)showDates:(NSDate *)beginDate :(NSDate *)endDate
 {
-    [self setVisibleRows:self.visibleRows];
     mrelease(_beginDate);
     mrelease(_endDate);
     
@@ -486,9 +490,6 @@
     
     _beginDate = [beginDate retain];
     _endDate = [endDate retain];
-    
-    if (_rowHeight == 0) { return; }
-    
     _rows = [_endDate weeksFromDate:_beginDate];
     [_monthScrollViewContainer mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(_rows * self.rowHeight));
@@ -508,7 +509,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-	
     _ESDatePickerTableViewCell *cell = (_ESDatePickerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	
     if (cell == nil) {
