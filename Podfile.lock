@@ -1,0 +1,16 @@
+PODS:
+  - ESDateHelper (1.4.1)
+  - ESObjectPool (1.3.1)
+  - Masonry (0.6.1)
+
+DEPENDENCIES:
+  - ESDateHelper (~> 1.2)
+  - ESObjectPool (~> 1.3)
+  - Masonry (~> 0.5)
+
+SPEC CHECKSUMS:
+  ESDateHelper: 5ea0fb6dd41fd09ba34eee2598ae7c31bd781228
+  ESObjectPool: 446d4e32a6b4b3fffb649bceaf22473e6a89e2d0
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+
+COCOAPODS: 0.35.0

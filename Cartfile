@@ -1,0 +1,3 @@
+github "Masonry/Masonry" ~> 0.6
+github "e-sites/ESObjectPool" ~> 1.3
+github "e-sites/ESDateHelper" ~> 1.4

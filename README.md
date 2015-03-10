@@ -1,5 +1,7 @@
 ESDatePicker
 ============
+
+[![Build](https://travis-ci.org/e-sites/ESDatePicker.svg)](https://travis-ci.org/e-sites/ESDatePicker)
 [![Platform](https://cocoapod-badges.herokuapp.com/p/ESDatePicker/badge.png)](http://cocoadocs.org/docsets/ESDatePicker)
 [![Version](https://cocoapod-badges.herokuapp.com/v/ESDatePicker/badge.png)](http://cocoadocs.org/docsets/ESDatePicker)
 [![Coverage Status](https://coveralls.io/repos/e-sites/ESDatePicker/badge.png)](https://coveralls.io/r/e-sites/ESDatePicker)

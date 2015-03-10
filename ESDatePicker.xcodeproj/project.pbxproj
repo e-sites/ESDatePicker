@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA85A97C9901FA67F4C563C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E79ADD8DFBB3D57585010C34 /* libPods.a */; };
+		ADCE139BF642EE261B7AAAEA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E79ADD8DFBB3D57585010C34 /* libPods.a */; };
+		DF444DE61AAF245D00BB2721 /* ESDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = DF444DE51AAF245D00BB2721 /* ESDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF444DEC1AAF245D00BB2721 /* ESDatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF444DE01AAF245D00BB2721 /* ESDatePicker.framework */; };
+		DF444DF31AAF245D00BB2721 /* ESDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF444DF21AAF245D00BB2721 /* ESDatePickerTests.m */; };
+		DF444DFD1AAF246F00BB2721 /* ESDatePicker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF444DE01AAF245D00BB2721 /* ESDatePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF444DFF1AAF24ED00BB2721 /* ESDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DF444DFE1AAF24ED00BB2721 /* ESDatePicker.m */; };
+		DF444E001AAF24ED00BB2721 /* ESDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DF444DFE1AAF24ED00BB2721 /* ESDatePicker.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF444DED1AAF245D00BB2721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF444DD71AAF245D00BB2721 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF444DDF1AAF245D00BB2721;
+			remoteInfo = ESDatePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF444DFC1AAF246900BB2721 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF444DFD1AAF246F00BB2721 /* ESDatePicker.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7BF23846816B58B2E410D001 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A1D67D01496EFF1E264FE250 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DF444DE01AAF245D00BB2721 /* ESDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF444DE41AAF245D00BB2721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF444DE51AAF245D00BB2721 /* ESDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDatePicker.h; sourceTree = "<group>"; };
+		DF444DEB1AAF245D00BB2721 /* ESDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF444DF11AAF245D00BB2721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF444DF21AAF245D00BB2721 /* ESDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESDatePickerTests.m; sourceTree = "<group>"; };
+		DF444DFE1AAF24ED00BB2721 /* ESDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatePicker.m; sourceTree = "<group>"; };
+		E79ADD8DFBB3D57585010C34 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF444DDC1AAF245D00BB2721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA85A97C9901FA67F4C563C4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF444DE81AAF245D00BB2721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF444DEC1AAF245D00BB2721 /* ESDatePicker.framework in Frameworks */,
+				ADCE139BF642EE261B7AAAEA /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ECF6F702846B687ACBD70DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1D67D01496EFF1E264FE250 /* Pods.debug.xcconfig */,
+				7BF23846816B58B2E410D001 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B168C2C83976EEC97C945F3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E79ADD8DFBB3D57585010C34 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF444DD61AAF245D00BB2721 = {
+			isa = PBXGroup;
+			children = (
+				DF444DE21AAF245D00BB2721 /* ESDatePicker */,
+				DF444DEF1AAF245D00BB2721 /* ESDatePickerTests */,
+				DF444DE11AAF245D00BB2721 /* Products */,
+				1ECF6F702846B687ACBD70DA /* Pods */,
+				B168C2C83976EEC97C945F3A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DF444DE11AAF245D00BB2721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF444DE01AAF245D00BB2721 /* ESDatePicker.framework */,
+				DF444DEB1AAF245D00BB2721 /* ESDatePickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF444DE21AAF245D00BB2721 /* ESDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				DF444DE51AAF245D00BB2721 /* ESDatePicker.h */,
+				DF444DFE1AAF24ED00BB2721 /* ESDatePicker.m */,
+				DF444DE31AAF245D00BB2721 /* Supporting Files */,
+			);
+			path = ESDatePicker;
+			sourceTree = "<group>";
+		};
+		DF444DE31AAF245D00BB2721 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF444DE41AAF245D00BB2721 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF444DEF1AAF245D00BB2721 /* ESDatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF444DF21AAF245D00BB2721 /* ESDatePickerTests.m */,
+				DF444DF01AAF245D00BB2721 /* Supporting Files */,
+			);
+			path = ESDatePickerTests;
+			sourceTree = "<group>";
+		};
+		DF444DF01AAF245D00BB2721 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF444DF11AAF245D00BB2721 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DF444DDD1AAF245D00BB2721 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF444DE61AAF245D00BB2721 /* ESDatePicker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DF444DDF1AAF245D00BB2721 /* ESDatePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF444DF61AAF245D00BB2721 /* Build configuration list for PBXNativeTarget "ESDatePicker" */;
+			buildPhases = (
+				FEF070E5952B567EC3ECE10B /* Check Pods Manifest.lock */,
+				DF444DDB1AAF245D00BB2721 /* Sources */,
+				DF444DDC1AAF245D00BB2721 /* Frameworks */,
+				DF444DDD1AAF245D00BB2721 /* Headers */,
+				DF444DDE1AAF245D00BB2721 /* Resources */,
+				6DFCF8D67881E9C4640A8606 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESDatePicker;
+			productName = ESDatePicker;
+			productReference = DF444DE01AAF245D00BB2721 /* ESDatePicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DF444DEA1AAF245D00BB2721 /* ESDatePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF444DF91AAF245D00BB2721 /* Build configuration list for PBXNativeTarget "ESDatePickerTests" */;
+			buildPhases = (
+				35FECF9A36821A66663F623F /* Check Pods Manifest.lock */,
+				DF444DE71AAF245D00BB2721 /* Sources */,
+				DF444DE81AAF245D00BB2721 /* Frameworks */,
+				DF444DE91AAF245D00BB2721 /* Resources */,
+				DF444DFC1AAF246900BB2721 /* CopyFiles */,
+				4CD2F6481C50A5796990F327 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF444DEE1AAF245D00BB2721 /* PBXTargetDependency */,
+			);
+			name = ESDatePickerTests;
+			productName = ESDatePickerTests;
+			productReference = DF444DEB1AAF245D00BB2721 /* ESDatePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF444DD71AAF245D00BB2721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "e-sites";
+				TargetAttributes = {
+					DF444DDF1AAF245D00BB2721 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					DF444DEA1AAF245D00BB2721 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = DF444DDA1AAF245D00BB2721 /* Build configuration list for PBXProject "ESDatePicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DF444DD61AAF245D00BB2721;
+			productRefGroup = DF444DE11AAF245D00BB2721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF444DDF1AAF245D00BB2721 /* ESDatePicker */,
+				DF444DEA1AAF245D00BB2721 /* ESDatePickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF444DDE1AAF245D00BB2721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF444DE91AAF245D00BB2721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35FECF9A36821A66663F623F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CD2F6481C50A5796990F327 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFCF8D67881E9C4640A8606 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF070E5952B567EC3ECE10B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF444DDB1AAF245D00BB2721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF444DFF1AAF24ED00BB2721 /* ESDatePicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF444DE71AAF245D00BB2721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF444DF31AAF245D00BB2721 /* ESDatePickerTests.m in Sources */,
+				DF444E001AAF24ED00BB2721 /* ESDatePicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF444DEE1AAF245D00BB2721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF444DDF1AAF245D00BB2721 /* ESDatePicker */;
+			targetProxy = DF444DED1AAF245D00BB2721 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DF444DF41AAF245D00BB2721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DF444DF51AAF245D00BB2721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF444DF71AAF245D00BB2721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1D67D01496EFF1E264FE250 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ESDatePicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DF444DF81AAF245D00BB2721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF23846816B58B2E410D001 /* Pods.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ESDatePicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DF444DFA1AAF245D00BB2721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1D67D01496EFF1E264FE250 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ESDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DF444DFB1AAF245D00BB2721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF23846816B58B2E410D001 /* Pods.release.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ESDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF444DDA1AAF245D00BB2721 /* Build configuration list for PBXProject "ESDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF444DF41AAF245D00BB2721 /* Debug */,
+				DF444DF51AAF245D00BB2721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF444DF61AAF245D00BB2721 /* Build configuration list for PBXNativeTarget "ESDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF444DF71AAF245D00BB2721 /* Debug */,
+				DF444DF81AAF245D00BB2721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF444DF91AAF245D00BB2721 /* Build configuration list for PBXNativeTarget "ESDatePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF444DFA1AAF245D00BB2721 /* Debug */,
+				DF444DFB1AAF245D00BB2721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF444DD71AAF245D00BB2721 /* Project object */;
+}
