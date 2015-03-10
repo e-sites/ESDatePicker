@@ -1,4 +1,4 @@
 language: objective-c
-xcode_project: ESDatePicker.xcodeproj
+xcode_workspace: ESDatePicker.xcworkspace
 xcode_scheme: ESDatePicker
 xcode_sdk: iphonesimulator8.1
