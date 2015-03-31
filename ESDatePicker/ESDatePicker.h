@@ -38,6 +38,8 @@
 @protocol ESDatePickerDelegate <NSObject>
 @required
 - (void)datePicker:(ESDatePicker *)datePicker dateSelected:(NSDate *)date;
+@optional
+- (void)datePickerDragStarted:(ESDatePicker *)picker;
 @end
 
 @interface ESDatePicker : UIView

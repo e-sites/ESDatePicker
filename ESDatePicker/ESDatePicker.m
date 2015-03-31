@@ -34,7 +34,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "ESDatePicker.h"
-#import <ESDateHelper.h>
+#import "ESDateHelper.h"
 #import <Masonry.h>
 #import "ESObjectPool.h"
 
@@ -305,7 +305,7 @@
     mrelease(_monthScrollViewContainer);
     _selectedDate = [[NSDate date] retain];
     
-    _objectPool = [[ESObjectPool staticObjectPool] retain];
+    _objectPool = [[ESObjectPool dynamicObjectPool] retain];
     _monthViews = [[NSMutableDictionary alloc] init];
     
     _monthIndicatorFont = [[UIFont boldSystemFontOfSize:17] retain];
@@ -370,7 +370,7 @@
 {
     mrelease(_monthIndicatorFont);
     _monthIndicatorFont = [monthIndicatorFont retain];
-    for (UILabel *lbl in _objectPool.usedObjects) {
+    for (UILabel *lbl in _objectPool.objects) {
         [lbl setFont:_monthIndicatorFont];
     }
 }
@@ -562,6 +562,9 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    if ([self.delegate respondsToSelector:@selector(datePickerDragStarted:)]) {
+        [self.delegate datePickerDragStarted:self];
+    }
     [self _showDrag:YES];
 }
 
