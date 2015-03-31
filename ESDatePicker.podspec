@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license        = { :type => "BSD", :file => "LICENSE" }
   s.homepage       = "https://github.com/e-sites/ESDatePicker"
   s.source         = { :git => "https://github.com/e-sites/ESDatePicker.git", :tag => s.version.to_s }
-  s.source_files   = "Classes"
+  s.source_files   = "ESDatePicker/*.{h,m}"
   s.requires_arc   = false
   s.dependency 'ESDateHelper', '~> 1.2'
   s.dependency 'ESObjectPool', '~> 1.3'
