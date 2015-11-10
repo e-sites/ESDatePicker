@@ -70,7 +70,6 @@
         const CGFloat lineHeight = 1.0f / [[UIScreen mainScreen] scale];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
-        
         _buttons = [[NSMutableArray alloc] init];
         UIControl *p = nil;
         UIControl *firstButton = nil;
@@ -343,6 +342,7 @@
     [_tableView setDelegate:self];
     [_tableView setShowsVerticalScrollIndicator:NO];
     [_tableView setDataSource:self];
+    [_tableView setSeparatorColor:[UIColor redColor]];
     [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self addSubview:_tableView];
@@ -479,6 +479,7 @@
 
 - (void)showDates:(NSDate *)beginDate :(NSDate *)endDate
 {
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     mrelease(_beginDate);
     mrelease(_endDate);
     
