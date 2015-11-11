@@ -330,11 +330,7 @@
     __weak__block typeof(self) blockSelf = self;
     __weak__block typeof(_monthScrollViewContainer) blockMonthScrollViewContainer = _monthScrollViewContainer;
     [_objectPool allocObjectsWithCapacity:4 withClass:[UILabel class] withInitBlock:^(UILabel *label) {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-value"
-        [label init];
-        
-#pragma GCC diagnostic pop
+        [label performSelector:NSSelectorFromString(@"init")];
         [label setHidden:YES];
         [blockMonthScrollViewContainer addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
