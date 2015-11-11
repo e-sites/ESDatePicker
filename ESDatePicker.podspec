@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source         = { :git => "https://github.com/e-sites/ESDatePicker.git", :tag => s.version.to_s }
   s.source_files   = "ESDatePicker/*.{h,m}"
   s.requires_arc   = true
+  s.dependency 'Masonry', '~> 0.6'
   s.dependency 'ESDateHelper', '~> 1.2'
   s.dependency 'ESObjectPool', '~> 1.3'
-  s.dependency 'Masonry', '~> 0.5'
 end
