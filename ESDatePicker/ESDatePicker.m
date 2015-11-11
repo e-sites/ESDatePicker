@@ -69,6 +69,7 @@
 {
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"]) {
         _datePicker = datePicker;
+        [self setOpaque:YES];
         CGFloat tw = self.frame.size.width;
         [self setBackgroundColor:[UIColor clearColor]];
         const CGFloat lineHeight = 1.0f / [[UIScreen mainScreen] scale];
@@ -188,6 +189,7 @@
 {
     mrelease(_date);
     _date = mretain(aDate);
+    [self setBackgroundColor:_datePicker.backgroundColor];
     NSDate *d = _date;
     NSDateFormatter *fm = [[NSDateFormatter alloc] init];
     [fm setLocale:_datePicker.locale];
@@ -346,12 +348,12 @@
     _beginOfWeek = 2;
     [self setZebraPrint:YES];
     _tableView = [[UITableView alloc] init];
-    [self setBackgroundColor:[UIColor whiteColor]];
     [_tableView setDelegate:self];
+    [_tableView setOpaque:YES];
+    [_tableView setBackgroundView:nil];
     [_tableView setShowsVerticalScrollIndicator:NO];
     [_tableView setDataSource:self];
     [_tableView setSeparatorColor:[UIColor redColor]];
-    [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -361,7 +363,15 @@
     [_monthScrollView setHidden:YES];
     mrelease(_tableView);
     mrelease(_monthScrollView);
+    [self setBackgroundColor:[UIColor whiteColor]];
+    
     [self setVisibleRows:5];
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    [_tableView setBackgroundColor:backgroundColor];
 }
 
 #pragma mark - Properties
@@ -549,6 +559,14 @@
     [cell setDate:date];
     
     return cell;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _tableView.separatorInset = UIEdgeInsetsZero;
+    _tableView.layoutMargins = UIEdgeInsetsZero;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
