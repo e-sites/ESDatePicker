@@ -40,17 +40,21 @@
 
 
 #if !__has_feature(objc_arc)
-#define __weak__block __block
-#define mrelease(obj) [obj release]
+#   define __weak__block __block
+#   define __wweak
+#   define mrelease(obj) [obj release]
+#   define mretain(obj) [obj retain]
 #else
-#define __weak__block __weak
-#define mrelease(obj)
+#   define __wweak __weak
+#   define __weak__block __weak
+#   define mrelease(obj)
+#   define mretain(obj) obj
 #endif
 
 @interface _ESDatePickerTableViewCell : UITableViewCell
 {
     NSMutableArray *_buttons;
-    ESDatePicker *_datePicker;
+    __wweak ESDatePicker *_datePicker;
 }
 @property (nonatomic, retain) NSDate *date;
 @end
@@ -64,7 +68,7 @@
 - (instancetype)initWithDatePicker:(ESDatePicker *)datePicker
 {
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"]) {
-        _datePicker = [datePicker retain];
+        _datePicker = datePicker;
         CGFloat tw = self.frame.size.width;
         [self setBackgroundColor:[UIColor clearColor]];
         const CGFloat lineHeight = 1.0f / [[UIScreen mainScreen] scale];
@@ -183,7 +187,7 @@
 - (void)setDate:(NSDate *)aDate
 {
     mrelease(_date);
-    _date = [aDate retain];
+    _date = mretain(aDate);
     NSDate *d = _date;
     NSDateFormatter *fm = [[NSDateFormatter alloc] init];
     [fm setLocale:_datePicker.locale];
@@ -230,10 +234,13 @@
 
 - (void)dealloc
 {
+    _datePicker = nil;
     mrelease(_buttons);
     mrelease(_date);
-    mrelease(_datePicker);
+    
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 @end
@@ -246,6 +253,7 @@
     NSDate *_beginDate;
     ESObjectPool *_objectPool;
     NSDate *_endDate;
+    NSDateFormatter *_monthDateFormatter;
     NSInteger _rows;
     UIScrollView *_monthScrollView;
     UIView *_monthScrollViewContainer;
@@ -302,21 +310,21 @@
         make.height.equalTo(@(0));
     }];
     mrelease(_monthScrollViewContainer);
-    _selectedDate = [[NSDate date] retain];
+    _selectedDate = mretain([NSDate date]);
     
-    _objectPool = [[ESObjectPool dynamicObjectPool] retain];
+    _objectPool = mretain([ESObjectPool dynamicObjectPool]);
     _monthViews = [[NSMutableDictionary alloc] init];
     
-    _monthIndicatorFont = [[UIFont boldSystemFontOfSize:17] retain];
-    _labelFont = [[UIFont systemFontOfSize:12] retain];
-    _monthIndicatorTextColor = [[UIColor blackColor] retain];
-    _labelTextColor = [[UIColor blackColor] retain];
-    _locale = [[NSLocale currentLocale] retain];
+    _monthIndicatorFont = mretain([UIFont boldSystemFontOfSize:17]);
+    _labelFont = mretain([UIFont systemFontOfSize:12]);
+    _monthIndicatorTextColor = mretain([UIColor blackColor]);
+    _labelTextColor = mretain([UIColor blackColor]);
+    _locale = mretain([NSLocale currentLocale]);
     _showVerticalLines = YES;
     _showHorizontalLines = YES;
-    _lineColor = [[UIColor colorWithWhite:0 alpha:0.075] retain];
-    _selectedColor = [[UIColor colorWithRed:(160.0f / 255.0f) green:(235.0f / 255.0f) blue:(255.0f / 255.0f) alpha:1] retain];
-    _selectedLabelTextColor = [[UIColor whiteColor] retain];
+    _lineColor = mretain([UIColor colorWithWhite:0 alpha:0.075]);
+    _selectedColor = mretain([UIColor colorWithRed:(160.0f / 255.0f) green:(235.0f / 255.0f) blue:(255.0f / 255.0f) alpha:1]);
+    _selectedLabelTextColor = mretain([UIColor whiteColor]);
     
     
     __weak__block typeof(self) blockSelf = self;
@@ -362,14 +370,14 @@
 - (void)setSelectedDate:(NSDate *)selectedDate
 {
     mrelease(_selectedDate);
-    _selectedDate = [selectedDate retain];
+    _selectedDate = mretain(selectedDate);
     [_tableView reloadData];
 }
 
 - (void)setMonthIndicatorFont:(UIFont *)monthIndicatorFont
 {
     mrelease(_monthIndicatorFont);
-    _monthIndicatorFont = [monthIndicatorFont retain];
+    _monthIndicatorFont = mretain(monthIndicatorFont);
     for (UILabel *lbl in _objectPool.objects) {
         [lbl setFont:_monthIndicatorFont];
     }
@@ -384,7 +392,7 @@
 - (void)setMonthIndicatorTextColor:(UIColor *)monthIndicatorTextColor
 {
     mrelease(_monthIndicatorTextColor);
-    _monthIndicatorTextColor = [monthIndicatorTextColor retain];
+    _monthIndicatorTextColor = mretain(monthIndicatorTextColor);
     for (UILabel *lbl in _objectPool.usedObjects) {
         [lbl setTextColor:_monthIndicatorTextColor];
     }
@@ -393,28 +401,28 @@
 - (void)setLabelFont:(UIFont *)labelFont
 {
     mrelease(_labelFont);
-    _labelFont = [labelFont retain];
+    _labelFont = mretain(labelFont);
     [_tableView reloadData];
 }
 
 - (void)setLineColor:(UIColor *)lineColor
 {
     mrelease(_lineColor);
-    _lineColor = [lineColor retain];
+    _lineColor = mretain(lineColor);
     [_tableView reloadData];
 }
 
 - (void)setSelectedColor:(UIColor *)selectedColor
 {
     mrelease(_selectedColor);
-    _selectedColor = [selectedColor retain];
+    _selectedColor = mretain(selectedColor);
     [_tableView reloadData];
 }
 
 - (void)setSelectedLabelTextColor:(UIColor *)selectedLabelTextColor
 {
     mrelease(_selectedLabelTextColor);
-    _selectedLabelTextColor = [selectedLabelTextColor retain];
+    _selectedLabelTextColor = mretain(selectedLabelTextColor);
     [_tableView reloadData];
 }
 
@@ -439,7 +447,7 @@
 - (void)setLabelTextColor:(UIColor *)labelTextColor
 {
     mrelease(_labelTextColor);
-    _labelTextColor = [labelTextColor retain];
+    _labelTextColor = mretain(labelTextColor);
     [_tableView reloadData];
 }
 
@@ -458,7 +466,7 @@
 - (void)setLocale:(NSLocale *)locale
 {
     mrelease(_locale);
-    _locale = [locale retain];
+    _locale = mretain(locale);
     [_tableView reloadData];
 }
 
@@ -489,8 +497,8 @@
     endDate = [endDate dateBySettingWeekDay:self.beginOfWeek];
     endDate = [endDate dateByAddingMonths:1];
     
-    _beginDate = [beginDate retain];
-    _endDate = [endDate retain];
+    _beginDate = mretain(beginDate);
+    _endDate = mretain(endDate);
     _rows = [_endDate weeksFromDate:_beginDate];
     [_monthScrollViewContainer mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(_rows * self.rowHeight));
@@ -511,14 +519,14 @@
 {
     static NSString *cellIdentifier = @"Cell";
     _ESDatePickerTableViewCell *cell = (_ESDatePickerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	
+    
     if (cell == nil) {
         cell = [[_ESDatePickerTableViewCell alloc] initWithDatePicker:self];
 #if !__has_feature(objc_arc)
         [cell autorelease];
 #endif
     }
-	NSInteger index = [indexPath row];
+    NSInteger index = [indexPath row];
     NSDate *date = [_beginDate dateByAddingWeeks:index];
     if (date.weekOfMonth == 3) {
         UILabel *lbl = (UILabel *)[_objectPool pull];
@@ -530,11 +538,13 @@
             make.top.equalTo(_monthScrollViewContainer.mas_top).offset(self.rowHeight * index);
         }];
         
-        NSDateFormatter *fm = [[NSDateFormatter alloc] init];
-        [fm setLocale:self.locale];
-        [fm setDateFormat:@"MMMM YYYY"];
-        [lbl setText:[fm stringFromDate:date]];
-        mrelease(fm);
+        if (_monthDateFormatter == nil) {
+            NSDateFormatter *fm = [[NSDateFormatter alloc] init];
+            [fm setLocale:self.locale];
+            [fm setDateFormat:@"MMMM YYYY"];
+            _monthDateFormatter = fm;
+        }
+        [lbl setText:[_monthDateFormatter stringFromDate:date]];
     }
     [cell setDate:date];
     
@@ -622,8 +632,12 @@
     mrelease(_labelFont);
     mrelease(_monthViews);
     mrelease(_objectPool);
+    mrelease(_monthDateFormatter);
     mrelease(_endDate);
+    
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 @end
